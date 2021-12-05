@@ -1,0 +1,268 @@
+
+@article{Tian2019,
+	abstract = {Emerging deep learning based computational microscopy techniques promise novel imaging capabilities beyond traditional techniques. In this talk, I will discuss two microscopy applications.
+	First, high space-bandwidth product microscopy typically requires a large number of measurements. I will present a novel physics-assisted deep learning (DL) framework for large space-bandwidth product (SBP) phase imaging,1 enabling significant reduction of the required measurements, opening up real-time applications. In this technique, we design asymmetric coded illumination patterns to encode high-resolution phase information across a wide field-of-view. We then develop a matching DL algorithm to provide large-SBP phase estimation. We demonstrate this technique on both static and dynamic biological samples, and show that it can reliably achieve 5x resolution enhancement across 4x FOVs using only five multiplexed measurements. In addition, we develop an uncertainty learning framework to provide predictive assessment to the reliability of the DL prediction. We show that the predicted uncertainty maps can be used as a surrogate to the true error. We validate the robustness of our technique by analyzing the model uncertainty. We quantify the effect of noise, model errors, incomplete training data, and “out-of-distribution” testing data by assessing the data uncertainty. We further demonstrate that the predicted credibility maps allow identifying spatially and temporally rare biological events. Our technique enables scalable DL-augmented large-SBP phase imaging with reliable predictions.
+	Second, I will turn to the pervasive problem of imaging in scattering media. I will discuss a new deep learning- based technique that is highly generalizable and resilient to statistical variations of the scattering media.2 We develop a statistical ‘one-to-all’ deep learning technique that encapsulates a wide range of statistical variations for the model to be resilient to speckle decorrelations. Specifically, we develop a convolutional neural network (CNN) that is able to learn the statistical information contained in the speckle intensity patterns captured on a set of diffusers having the same macroscopic parameter. We then show that the trained CNN is able to generalize and make high-quality object predictions through an entirely different set of diffusers of the same class. Our work paves the way to a highly scalable deep learning approach for imaging through scattering media.},
+	author = {Lei Tian and Yujia Xue and Yunzhe Li and Shiyi Cheng},
+	doi = {10.1117/12.2515580},
+	journal = {https://doi.org/10.1117/12.2515580},
+	keywords = {Deep learning,Machine learning,Microscopy,Phase imaging,Scattering,Scattering media},
+	month = {3},
+	pages = {108830G},
+	publisher = {SPIE},
+	title = {Learning approach to computational microscopy},
+	volume = {10883},
+	url = {https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10883/108830G/Learning-approach-to-computational-microscopy/10.1117/12.2515580.full https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10883/108830G/Learning-approach-to-computational-microscopy/10.1117/12.2515580.short https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10883/108830G/Learning-approach-to-computational-microscopy/.full},
+	year = {2019},
+	annote    = {For my needs, the useful items discussed in this paper include computational microscopy and physics-assisted deep learning framework with 5x performance.},
+}
+
+@article{Nguyen2019,
+	abstract = {We propose to use deep convolutional neural networks (DCNNs) to perform 2D and 3D computational imaging. Specifically, we investigate three different applications. We first try to solve the 3D inverse scattering problem based on learning a huge number of training target and speckle pairs. We also demonstrate a new DCNN architecture to perform Fourier ptychographic Microscopy (FPM) reconstruction, which achieves high-resolution phase recovery with considerably less data than standard FPM. Finally, we employ DCNN models that can predict focused 2D fluorescent microscopic images from blurred images captured at overfocused or underfocused planes.},
+	author = {Thanh Nguyen and George Nehmetallah and Lei Tian},
+	doi = {10.1117/12.2520089},
+	journal = {https://doi.org/10.1117/12.2520089},
+	keywords = {3D image processing,3D modeling,Charge-coupled devices,Data modeling,Diffraction,Microscopy,Refraction,Spatial light modulators,Tomography,Video},
+	month = {5},
+	pages = {10-20},
+	publisher = {SPIE},
+	title = {Deep learning in computational microscopy},
+	volume = {10990},
+	url = {https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10990/1099007/Deep-learning-in-computational-microscopy/10.1117/12.2520089.full},
+   note = {[Accessed: Nov 1, 2021]},
+	year = {2019},
+	annote    = {The third application in this paper takes a blurred image and predicts a two-dimensional focused fluorescent microscopic images.},
+}
+
+@article{Tian2019-2,
+	abstract = {Emerging deep-learning (DL)-based techniques have significant potential to revolutionize biomedical imaging. However, one outstanding challenge is the lack of reliability assessment in the DL predictions, whose errors are commonly revealed only in hindsight. Here, we propose a new Bayesian convolutional neural network (BNN)-based framework that overcomes this issue by quantifying the uncertainty of DL predictions. Foremost, we show that BNN-predicted uncertainty maps provide surrogate estimates of the true error from the network model and measurement itself. The uncertainty maps characterize imperfections often unknown in real-world applications, such as noise, model error, incomplete training data, and out-of-distribution testing data. Quantifying this uncertainty provides a per-pixel estimate of the confidence level of the DL prediction as well as the quality of the model and data set. We demonstrate this framework in the application of large space\&#x2013;bandwidth product phase imaging using a physics-guided coded illumination scheme. From only five multiplexed illumination measurements, our BNN predicts gigapixel phase images in both static and dynamic biological samples with quantitative credibility assessment. Furthermore, we show that low-certainty regions can identify spatially and temporally rare biological phenomena. We believe our uncertainty learning framework is widely applicable to many DL-based biomedical imaging techniques for assessing the reliability of DL predictions.},
+	author = {Lei Tian and Shiyi Cheng and Yujia Xue and Yunzhe Li},
+	doi = {10.1364/OPTICA.6.000618},
+	issn = {2334-2536},
+	issue = {5},
+	journal = {Optica, Vol. 6, Issue 5, pp. 618-629},
+	keywords = {Image processing,Imaging techniques,Medical imaging,Phase estimation,Phase imaging,Phase retrieval},
+	month = {5},
+	pages = {618-629},
+	publisher = {Optical Society of America},
+	title = {Reliable deep-learning-based phase imaging with uncertainty quantification},
+	volume = {6},
+	url = {https://www.osapublishing.org/optica/abstract.cfm?uri=optica-6-5-618},
+   note = {[Accessed: Nov 1, 2021]},
+	year = {2019},
+	annote    = {In this paper, by using a physics-guided illumination scheme, and providing a deep learning model, the uncertainty of a deep learning model is quantified in biomedical imaging technics.},
+}
+
+@article{,
+   abstract = {Deep learning techniques have been successfully applied in many areas of computer vision, including low-level image restoration problems. For image super-resolution, several models based on deep neural networks have been recently proposed and attained superior performance that overshadows all previous handcrafted models. The question then arises whether large-capacity and data-driven models have become the dominant solution to the ill-posed super-resolution problem. In this paper, we argue that domain expertise represented by the conventional sparse coding model is still valuable, and it can be combined with the key ingredients of deep learning to achieve further improved results. We show that a sparse coding model particularly designed for super-resolution can be incarnated as a neural network, and trained in a cascaded structure from end to end. The interpretation of the network based on sparse coding leads to much more efficient and effective training, as well as a reduced model size. Our model is evaluated on a wide range of images, and shows clear advantage over existing state-of-the-art methods in terms of both restoration accuracy and human subjective quality.},
+   author = {Zhaowen Wang and Ding Liu and Jianchao Yang and Wei Han and Thomas Huang},
+   title = {Deep Networks for Image Super-Resolution with Sparse Prior},
+	annote    = {This paper points out sparse coding as a deep learning technic to deal with super-resolution issues. They achieved higher performance with a reduced model size.},
+}
+@article{Yang2020,
+   abstract = {Compressive sensing (CS) is an effective technique for reconstructing image from a small amount of sampled data. It has been widely applied in medical imaging, remote sensing, image compression, etc. In this paper, we propose two versions of a novel deep learning architecture, dubbed as ADMM-CSNet, by combining the traditional model-based CS method and data-driven deep learning method for image reconstruction from sparsely sampled measurements. We first consider a generalized CS model for image reconstruction with undetermined regularizations in undetermined transform domains, and then two efficient solvers using Alternating Direction Method of Multipliers (ADMM) algorithm for optimizing the model are proposed. We further unroll and generalize the ADMM algorithm to be two deep architectures, in which all parameters of the CS model and the ADMM algorithm are discriminatively learned by end-to-end training. For both applications of fast CS complex-valued MR imaging and CS imaging of real-valued natural images, the proposed ADMM-CSNet achieved favorable reconstruction accuracy in fast computational speed compared with the traditional and the other deep learning methods.},
+   author = {Yan Yang and Jian Sun and Huibin Li and Zongben Xu},
+   doi = {10.1109/TPAMI.2018.2883941},
+   issue = {3},
+   journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+   keywords = {ADMM,ADMM-CSNet,Compressive sensing,MR imaging,deep learning},
+   month = {3},
+   pages = {521-538},
+   publisher = {IEEE Computer Society},
+   title = {ADMM-CSNet: A Deep Learning Approach for Image Compressive Sensing},
+   volume = {42},
+   year = {2020},
+	annote    = {A combination of traditional model-based methods with deep learning is introduced as ADMM-CSNET to reconstruct images. The model has also been unrolled to attain two deep architectures.},
+}
+
+@article{Monga2021,
+   abstract = {Deep neural networks provide unprecedented performance gains in many real-world problems in signal and image processing. Despite these gains, the future development and practical deployment of deep networks are hindered by their black-box nature, i.e., a lack of interpretability and the need for very large training sets. An emerging technique called algorithm unrolling, or unfolding, offers promise in eliminating these issues by providing a concrete and systematic connection between iterative algorithms that are widely used in signal processing and deep neural networks. Unrolling methods were first proposed to develop fast neural network approximations for sparse coding. More recently, this direction has attracted enormous attention, and it is rapidly growing in both theoretic investigations and practical applications. The increasing popularity of unrolled deep networks is due, in part, to their potential in developing efficient, high-performance (yet interpretable) network architectures from reasonably sized training sets.},
+   author = {Vishal Monga and Yuelong Li and Yonina C. Eldar},
+   doi = {10.1109/MSP.2020.3016905},
+   issue = {2},
+   journal = {IEEE Signal Processing Magazine},
+   month = {3},
+   pages = {18-44},
+   publisher = {Institute of Electrical and Electronics Engineers Inc.},
+   title = {Algorithm Unrolling: Interpretable, Efficient Deep Learning for Signal and Image Processing},
+   volume = {38},
+   year = {2021},
+	annote    = {The algorithm unrolling paper, using deep learning with sparse coding.},
+}
+@article{Li2020,
+   abstract = {Blind image deblurring remains a topic of enduring interest. Learning based approaches, especially those that employ neural networks have emerged to complement traditional model based methods and in many cases achieve vastly enhanced performance. That said, neural network approaches are generally empirically designed and the underlying structures are difficult to interpret. In recent years, a promising technique called algorithm unrolling has been developed that has helped connect iterative algorithms such as those for sparse coding to neural network architectures. In this article, we propose a neural network architecture based on this idea. We first present an iterative algorithm that may be considered as a generalization of the traditional total-variation regularization method in the gradient domain. We then unroll the algorithm to construct a neural network for image deblurring which we refer to as Deep Unrolling for Blind Deblurring (DUBLID). Key algorithm parameters are learned with the help of training images. Our proposed deep network DUBLID achieves significant practical performance gains while enjoying interpretability and efficiency at the same time. Extensive experimental results show that DUBLID outperforms many state-of-the-art methods and in addition is computationally faster.},
+   author = {Yuelong Li and Mohammad Tofighi and Junyi Geng and Vishal Monga and Yonina C. Eldar},
+   doi = {10.1109/TCI.2020.2964202},
+   journal = {IEEE Transactions on Computational Imaging},
+   month = {1},
+   pages = {666-681},
+   publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+   title = {Efficient and Interpretable Deep Blind Image Deblurring Via Algorithm Unrolling},
+   volume = {6},
+   year = {2020},
+	
+}
+
+@generic{Nan2020,
+   abstract = {Non-blind deblurring is an important problem encountered in many image restoration tasks. The focus of non-blind deblurring is on how to suppress noise magnification during deblurring. In practice, it often happens that the noise level of input image is unknown and varies among different images. This paper aims at developing a deep learning framework for deblurring images with unknown noise level. Based on the framework of variational expectation maximization (EM), an iterative noise-blind deblur-ring scheme is proposed which integrates the estimation of noise level and the quantification of image prior uncertainty. Then, the proposed scheme is unrolled to a neural network (NN) where image prior is modeled by NN with uncertainty quantification. Extensive experiments showed that the proposed method not only outperformed existing noise-blind deblurring methods by a large margin, but also out-performed those state-of-the-art image deblurring methods designed/trained with known noise level.},
+   author = {Yuesong Nan and Yuhui Quan and Hui Ji},
+   pages = {3626-3635},
+   title = {Variational-EM-Based Deep Learning for Noise-Blind Image Deblurring},
+   year = {2020},
+   annote   = {This paper uses deep learning for deblurring the images that their noise level is not known. Then the result is unrolled to a neural network. It results in higher performance even than the methods that they know the noise level.},
+}
+
+@article{Quan2021,
+   abstract = {Nonblind image deblurring is about recovering the latent clear image from a blurry one generated by a known blur kernel, which is an often-seen yet challenging inverse problem in imaging. Its key is how to robustly suppress noise magnification during the inversion process. Recent approaches made a breakthrough by exploiting convolutional neural network (CNN)-based denoising priors in the image domain or the gradient domain, which allows using a CNN for noise suppression. The performance of these approaches is highly dependent on the effectiveness of the denoising CNN in removing magnified noise whose distribution is unknown and varies at different iterations of the deblurring process for different images. In this article, we introduce a CNN-based image prior defined in the Gabor domain. The prior not only utilizes the optimal space-frequency resolution and strong orientation selectivity of the Gabor transform but also enables using complex-valued (CV) representations in intermediate processing for better denoising. A CV CNN is developed to exploit the benefits of the CV representations, with better generalization to handle unknown noises over the real-valued ones. Combining our Gabor-domain CV CNN-based prior with an unrolling scheme, we propose a deep-learning-based approach to nonblind image deblurring. Extensive experiments have demonstrated the superior performance of the proposed approach over the state-of-the-art ones.},
+   author = {Yuhui Quan and Peikang Lin and Yong Xu and Yuesong Nan and Hui Ji},
+   doi = {10.1109/TNNLS.2021.3070596},
+   journal = {IEEE Transactions on Neural Networks and Learning Systems},
+   keywords = {Complex-valued (CV) convolutional neural network (CNN),Gabor transform,deep learning,image deblurring,inverse problem.},
+   publisher = {Institute of Electrical and Electronics Engineers Inc.},
+   title = {Nonblind Image Deblurring via Deep Learning in Complex Field},
+   year = {2021},
+   annote   = {The paper concentrates on denoising combined with deblurring},
+}
+
+@article{Li2019,
+   abstract = {Blind image deblurring remains a topic of enduring interest. Learning based approaches, especially those that employ neural networks have emerged to complement traditional model based methods and in many cases achieve vastly enhanced performance. That said, neural network approaches are generally empirically designed and the underlying structures are difficult to interpret. In recent years, a promising technique called algorithm unrolling has been developed that has helped connect iterative algorithms such as those for sparse coding to neural network architectures. However, such connections have not been made yet for blind image deblurring. In this paper, we propose a neural network architecture based on this idea. We first present an iterative algorithm that may be considered as a generalization of the traditional total-variation regularization method in the gradient domain. We then unroll the algorithm to construct a neural network for image deblurring which we refer to as Deep Unrolling for Blind Deblurring (DUBLID). Key algorithm parameters are learned with the help of training images. Our proposed deep network DUBLID achieves significant practical performance gains while enjoying interpretability at the same time. Extensive experimental results show that DUBLID outperforms many state-of-the-art methods and in addition is computationally faster.},
+   author = {Yuelong Li and Mohammad Tofighi and Junyi Geng and Vishal Monga and Yonina C. Eldar},
+   month = {2},
+   authors = {Li YTofighi MGeng JMonga VEldar},
+   title = {Deep Algorithm Unrolling for Blind Image Deblurring},
+   url = {http://arxiv.org/abs/1902.03493},
+   note = {[Accessed: Nov 1, 2021]},
+   year = {2019},
+}
+@article{Li2019-2,
+   abstract = {While neural networks have achieved vastly enhanced performance over traditional iterative methods in many cases, they are generally empirically designed and the underlying structures are difficult to interpret. The algorithm unrolling approach has helped connect iterative algorithms to neural network architectures. However, such connections have not been made yet for blind image deblurring. In this paper, we propose a neural network architecture that advances this idea. We first present an iterative algorithm that may be considered a generalization of the traditional total-variation regularization method on the gradient domain, and subsequently unroll the half-quadratic splitting algorithm to construct a neural network. Our proposed deep network achieves significant practical performance gains while enjoying interpretability at the same time. Experimental results show that our approach outperforms many state-of-the-art methods.},
+   author = {Yuelong Li and Mohammad Tofighi and Vishal Monga and Yonina C. Eldar},
+   doi = {10.1109/ICASSP.2019.8682542},
+   journal = {ICASSP, IEEE International Conference on Acoustics, Speech and Signal Processing - Proceedings},
+   month = {5},
+   pages = {7675-7679},
+   publisher = {Institute of Electrical and Electronics Engineers Inc.},
+   title = {An Algorithm Unrolling Approach to Deep Image Deblurring},
+   volume = {2019-May},
+   year = {2019},
+}
+@INPROCEEDINGS{Shlezinger2021,
+   author = {Nir Shlezinger and Jay Whang and Yonina C. Eldar and Alexandros G. Dimakis},
+   doi = {10.1109/DSLW51110.2021.9523403},
+   booktitle = {2021 IEEE Data Science and Learning Workshop (DSLW)},
+   month = {6},
+   pages = {1-6},
+   publisher = {IEEE},
+   title = {Model-Based Deep Learning: Key Approaches and Design Guidelines},
+   url = {https://ieeexplore.ieee.org/document/9523403/},
+   note = {[Accessed: Nov 1, 2021]},
+   year = {2021},
+}
+@article{Ozcan2019,
+   abstract = {Since their inception in the 1930\&#x2013;1960s, the research disciplines of computational imaging and machine learning have followed parallel tracks and, during the last two decades, experienced explosive growth drawing on similar progress in mathematical optimization and computing hardware. While these developments have always been to the benefit of image interpretation and machine vision, only recently has it become evident that machine learning architectures, and deep neural networks in particular, can be effective for computational image formation, aside from interpretation. The deep learning approach has proven to be especially attractive when the measurement is noisy and the measurement operator ill posed or uncertain. Examples reviewed here are: super-resolution; lensless retrieval of phase and complex amplitude from intensity; photon-limited scenes, including ghost imaging; and imaging through scatter. In this paper, we cast these works in a common framework. We relate the deep-learning-inspired solutions to the original computational imaging formulation and use the relationship to derive design insights, principles, and caveats of more general applicability. We also explore how the machine learning process is aided by the physics of imaging when ill posedness and uncertainties become particularly severe. It is hoped that the present unifying exposition will stimulate further progress in this promising field of research.},
+   author = {Aydogan Ozcan and George Barbastathis and Guohai Situ},
+   doi = {10.1364/OPTICA.6.000921},
+   issn = {2334-2536},
+   issue = {8},
+   journal = {Optica, Vol. 6, Issue 8, pp. 921-943},
+   keywords = {Computational imaging,Image processing,Image quality,Imaging systems,Phase imaging,Phase retrieval},
+   month = {8},
+   pages = {921-943},
+   publisher = {Optical Society of America},
+   title = {On the use of deep learning for computational imaging},
+   volume = {6},
+   url = {https://www.osapublishing.org/optica/abstract.cfm?uri=optica-6-8-921},
+   note = {[Accessed: Nov 1, 2021]},
+   year = {2019},
+   annote = {Review paper discusses deep learning applications in computation imaging},
+}
+@article{Chen2018,
+   abstract = {In recent years, unfolding iterative algorithms as neural networks has become
+an empirical success in solving sparse recovery problems. However, its
+theoretical understanding is still immature, which prevents us from fully
+utilizing the power of neural networks. In this work, we study unfolded ISTA
+(Iterative Shrinkage Thresholding Algorithm) for sparse signal recovery. We
+introduce a weight structure that is necessary for asymptotic convergence to
+the true sparse signal. With this structure, unfolded ISTA can attain a linear
+convergence, which is better than the sublinear convergence of ISTA/FISTA in
+general cases. Furthermore, we propose to incorporate thresholding in the
+network to perform support selection, which is easy to implement and able to
+boost the convergence rate both theoretically and empirically. Extensive
+simulations, including sparse vector recovery and a compressive sensing
+experiment on real image data, corroborate our theoretical results and
+demonstrate their practical usefulness. We have made our codes publicly
+available: https://github.com/xchen-tamu/linear-lista-cpss.},
+   author = {Xiaohan Chen and Jialin Liu and Zhangyang Wang and Wotao Yin},
+   journal = {Advances in Neural Information Processing Systems},
+   month = {8},
+   pages = {9061-9071},
+   publisher = {Neural information processing systems foundation},
+   title = {Theoretical Linear Convergence of Unfolded ISTA and its Practical Weights and Thresholds},
+   volume = {2018-December},
+   url = {https://arxiv.org/abs/1808.10038v2},
+   note = {[Accessed: Nov 1, 2021]},
+   year = {2018},
+}
+@article{Lucas2018,
+   abstract = {Traditionally, analytical methods have been used to solve imaging problems such as image restoration, inpainting, and superresolution (SR). In recent years, the fields of machine and deep learning have gained a lot of momentum in solving such imaging problems, often surpassing the performance provided by analytical approaches. Unlike analytical methods for which the problem is explicitly defined and domain-knowledge carefully engineered into the solution, deep neural networks (DNNs) do not benefit from such prior knowledge and instead make use of large data sets to learn the unknown solution to the inverse problem. In this article, we review deep-learning techniques for solving such inverse problems in imaging. More specifically, we review the popular neural network architectures used for imaging tasks, offering some insight as to how these deep-learning tools can solve the inverse problem. Furthermore, we address some fundamental questions, such as how deeplearning and analytical methods can be combined to provide better solutions to the inverse problem in addition to providing a discussion on the current limitations and future directions of the use of deep learning for solving inverse problem in imaging.},
+   author = {Alice Lucas and Michael Iliadis and Rafael Molina and Aggelos K. Katsaggelos},
+   doi = {10.1109/MSP.2017.2760358},
+   issue = {1},
+   journal = {IEEE Signal Processing Magazine},
+   month = {1},
+   pages = {20-36},
+   publisher = {Institute of Electrical and Electronics Engineers Inc.},
+   title = {Using Deep Neural Networks for Inverse Problems in Imaging: Beyond Analytical Methods},
+   volume = {35},
+   year = {2018},
+   annote = {DNN models do not benefit from the prior knowledge provided by analytical models. Here, the deep learning technics to solve inverse problems are reviewed. Then, introduces methods to the combination of DNN and analytical models. Their work is similar to "Model-Based Deep Learning"},
+}
+@generic{Liu2018,
+   abstract = {Deep neural networks based on unfolding an iterative algorithm, for example, LISTA (learned iterative shrinkage thresholding algorithm), have been an empirical success for sparse signal recovery. The weights of these neural networks are currently determined by data-driven "black-box" training. In this work, we propose Analytic LISTA (ALISTA), where the weight matrix in LISTA is computed as the solution to a data-free optimization problem, leaving only the step-size and threshold parameters to data-driven learning. This significantly simplifies the training. Specifically, the data-free optimization problem is based on coherence minimization. We show our ALISTA retains the optimal linear convergence proved in (Chen et al., 2018) and has a performance comparable to LISTA. Furthermore , we extend ALISTA to convolutional linear operators, again determined in a data-free manner. We also propose a feed-forward framework that combines the data-free optimization and ALISTA networks from end to end, one that can be jointly trained to gain robustness to small perturbations in the encoding model.},
+   author = {Jialin Liu and Xiaohan Chen and Zhangyang Wang and Wotao Yin},
+   month = {9},
+   title = {ALISTA: Analytic Weights Are As Good As Learned Weights in LISTA},
+   year = {2018},
+   annote   = {Analytical Learned Itarative Shrinkage Thresholding Algorithm proposes a solution to a data-free optimization problem.},
+}
+
+@article{Mardani2018,
+author = {M. Mardani and Hatef Monajemi and V. Papyan and S. Vasanawala and D. Donoho and J. Pauly},
+title = {Recurrent Generative Residual Networks for Proximal Learning and Automated Compressive Image Recovery},
+year = {2018},
+}
+
+
+@online{dnn,
+   title = {{Deep Neural Networks - KDnuggets}},
+   url = {https://www.kdnuggets.com/2020/02/deep-neural-networks.html},
+   note = {[Accessed: Nov 1, 2021]},
+}
+@online{wiki:ann,
+   title = {Artificial Neural Networks - Wikipedia},
+   url = {https://en.wikipedia.org/wiki/Artificial\_neural\_network},
+   note = {[Accessed: Nov 1, 2021]},
+}
+
+@online{wiki:cnn,
+   title = {Convolutional Neural Networks - Wikipedia},
+   url = {https://en.wikipedia.org/wiki/Convolutional\_neural\_network},
+   note = {[Accessed: Nov 1, 2021]},
+}
+@online{wiki:dnn,
+   title = {Deep learning - Wikipedia},
+   url = {https://en.wikipedia.org/wiki/Deep\_learning},
+   note = {[Accessed: Nov 1, 2021]},
+}
+@online{wiki:control-systems,
+   title = {Control system - Wikipedia},
+   url = {https://en.wikipedia.org/wiki/Control\_system},
+   note = {[Accessed: Nov 1, 2021]},
+}
+@misc{wiki:systems,
+   title = {System - Wikipedia},
+   url = {https://en.wikipedia.org/wiki/System},
+   note = {[Accessed: Nov 1, 2021]},
+}
+
+

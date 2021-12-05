@@ -1,0 +1,238 @@
+\documentclass[conference, 11pt]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[section]{placeins}
+\usepackage{floatrow}
+\usepackage[margin=1in]{geometry}
+\floatsetup[table]{capposition=top}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+
+% table comparing non-blind and vm is not correct
+% add reported from non-blind to table
+% look at presentation's table
+% add modl to model based
+% use non blind pictures from presentation
+% update images, citations, tables, data from presentation
+% bring formula to the beginnnign
+\begin{document}
+	
+	\title{Literature Review: Physics-Guided Image Deblurring using Deep Learning}
+	
+	\author{\IEEEauthorblockN{1\textsuperscript{st} S. Parisa Daj.}
+		\IEEEauthorblockA{\textit{Electrical and Computer Engineering Department)} \\
+			\textit{University of Memphis}\\
+			Memphis, TN \\
+			s.dajkhosh@memphis.edu}}
+	
+	
+	\maketitle
+	
+	\begin{abstract}
+		
+		In the era of artificial intelligence, classical model-based systems are being replaced with complete black-box models learned with deep neural networks (DNNs). However, these models use too many parameters and require extensive datasets to succeed. Thus, in cases where gathering too much data can be challenging, such as medical and microscopy imaging, the time and computational performance of deep neural networks are not satisfactory. One of the challenges is deblurring the pictures taken. Due to data and speed problems, we would like to address some methods in image deblurring. According to too many environmental issues, the images have a level of blur. Therefore, if the analytical model of the blurring system is known, or even if part of it is known, it will be a proper approach to examine using the model-based methods combining DNNs with the analytics. That is the motivation to analyze physics-guided deep learning methodologies, as they can help solve a vast amount of data and low-speed problems. Besides, we observe some deblurring algorithms. The goal is to conclude whether any of the deblurring approaches utilize any physics-guided methods. If yes, how can the results compare with the ones that are not using knowledge from their system? Otherwise, are those deblurring technics able to accept any of the physics-guided methodologies or not? Finally, give an overview of how much model-based deep learning methods can be useful in image deblurring.
+		
+	\end{abstract}
+	
+	\begin{IEEEkeywords}
+		physics-guided, deep learning, computational imaging, image deblurring
+	\end{IEEEkeywords}
+	
+	\pagebreak
+	
+	\section{Introduction}	
+	\subsection{motivation}
+	\subsection{Computational Imaging Challenges}
+	"Computational imaging (CI) is a class of imaging systems that, starting from an imperfect physical measurement and prior knowledge about the class of objects or scenes being imaged, deliver estimates of a specific object or scene presented to the imaging system.", \cite{Ozcan2019}. There are various challenges to solve in this field including dealing with low resolution, imaging in dim light, noise, and blur. Machine learning is helping scientists to solve these issues, \cite{Ozcan2019}. One of the challenges in this area is image deblurring. The task reflects how to get a sharper output image out of a blurred noisy input image, \cite{Li2020}. The blurring function model in some cases is known, which leads us to non-blind image deblurring, \cite{Nan2020}. However, in some other cases, the blurring model is unknown or partially known. In these scenarios, deep learning helps to understand the blurring model, \cite{Li2020}. More importantly, in cases that the model is partially known or noisy, it will be a better idea to use the known parameters in the modeling, as they are accurate, and we will not need to retrain everything from the beginning. Then, we can only concentrate on learning just the unknown parameters.
+	
+	\subsection{Physics guided modeling}
+	A system, in general, includes a set of components connected or related to each other to connect one or a set of inputs to one or several outputs, \cite{wiki:systems}. In the classical approaches, depending on the type of system, it was defined using the analytical or physical equations describing the relationship of the input/s and output/s, regarding the components of the system, \cite{wiki:systems}.  As an example, in (fig \ref{img:feedback}) a feedback system is shown. In this figure, for both A and B, an analytical solution has to be found. Knowing the analytical model of a system can help understand the system, explain it; consequently, control it. In various applications, it is essential to be able to analytically describe a model. However, finding the analytic in some cases is very difficult, inaccurate, or even impossible. In such cases, Deep Neural Networks (DNNs) appear to find the analytic themselves.
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.8\textwidth]{figs/feedback-system.png}
+		\centering
+		\caption{A simple feedback systems: for the forward direction, "A" corresponds to the analytical transfer function indicating how outputs are driven from the given inputs, and "B" explains the analytical formula of how the output is observed by sensors, etc. then, returned as an addition to the input of the system, \cite{wiki:control-systems}.
+			\label{img:feedback}}
+	\end{figure}
+	
+	\subsection{Deep learning \cite{wiki:dnn}}
+	Deep Learning has revolutionized the world of modeling. Its purpose is to consider the system as a black box. By feeding the system with tones of various data samples, and capturing their outputs, it tries to learn the analytical relation between inputs and outputs using back-propagation. The procedure of the model is to feed the improvised system with inputs. Then, to come up with an output. The output is compared with the expected output of the system which has previously been labeled for its specific given input. The system model updates in a way to minimize the difference between the new system's output and the expected output. Finally, after testing the model, the analytic is ready to be used as the physical description of the model. As follows, we will discuss different Deep Learning algorithms to solve multiple issues. Therefore, they are shortly introduced here.
+	
+	\subsubsection{Fully Connected Neural Networks \cite{Ozcan2019}}
+	In (fig \ref{img:mlp}) a fully connected deep neural network is seen. In this algorithm, all the neurons of each layer are connected to all of the neurons of both the previous and next layers with specific weights for each connection. They are the simplest and still accurate. However, because they include all of the possible connections, they are very slow, and they are prone to over-fitting.
+	
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.99\textwidth]{figs/deep-neural-network.jpg}
+		\centering
+		\caption{An example of a Fully Connected Deep Neural Network, \cite{wiki:ann}.
+			\label{img:mlp}}
+	\end{figure}
+	
+	\subsubsection{Convolutional Neural Networks \cite{Ozcan2019}}
+	A Convolutional Neural Network (CNN) convolves input images through filters in multiple channels. (fig \ref{img:cnn}) shows how features are extracted from the input image. Their benefit in comparison with fully connected neural networks is that not only do they require much fewer parameters and make the calculations more quickly, but they also result in higher accuracies as they avoid data over-fitting. Furthermore, in CNNs, features are extracted from meaningful filters.
+	
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.99\textwidth]{figs/cnn-arch.png}
+		\centering
+		\caption{A example of a typical Convolutional Neural Network (CNN), \cite{wiki:cnn}.
+			\label{img:cnn}}
+	\end{figure}
+	
+	\subsubsection{Unrolling \cite{Li2019-2}}
+	This algorithm is useful for iterative cases. Using this method, an analytical approach (h) in (fig \label{img:unrolling}) is unrolled to a deep neural network. Thus, each deep network layer plays the role of an iteration in the process. These layers are stacked together.
+	
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.99\textwidth]{figs/unrolling-arch.jpg}
+		\centering
+		\caption{Algorithm unrolling \cite{Shlezinger2021}}
+		\label{img:unrolling}
+	\end{figure}
+	
+	
+	\section{Overview of physics guided deep learning}
+	Although Deep Learning models, if trained properly, are reliable enough and even more accurate than the classical model-based method, they have their own downsides. DNNs can learn unknown parameters to describe a model. However, they require high memory, high computational usage, and a vast amount of data. Providing these three are time, energy, and money-consuming. In order to learn the relation of inputs and outputs, a big amount of input data has to be fed to the model, there are overwhelming challenges to gathering too much data on many specific applications. After gathering all the required data, they need to be kept in memory. Furthermore, depending on the complexity of the network, it also consumes memory. All the model calculations have to be performed by a high-performance computer and the process usually takes a considerable amount of time. As a result, there are different approaches presented in this article that prefer to combine a DNN with an analytical model. The reason is that in many situations, only a few parameters of the model are unknown. Thus, it is a good idea to only learn the unknown parameters, and keep the known parts to be calculated classically. Or on the other hand, if the model includes only a few known parameters, the known parts of the DNN can be replaced with the known analytic, \cite{Shlezinger2021}.
+	
+		
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.99\textwidth]{figs/recurrent-arch.png}
+		\centering
+		\caption{Recurrent physics-informed ML engine. Where \(N = 1 - \alpha.H^T.H\), and alpha is a small step size, \cite{Ozcan2019}}
+		\label{img:recurrent-arch}
+	\end{figure}
+	\pagebreak
+	
+	One way is to follow the physical model by a recurrent network. The input is the raw intensity measurement. $\alpha$ indicates the step size. In the cascaded method (fig \ref{img:cascaded-arch}), the recurrent architecture is sequenced in m infinite number of steps. The difference here is that N does not return as current network input, but it is passed to the next step. \(H^{T}\) in both (fig \ref{img:recurrent-arch} and fig \ref{img:cascaded-arch} corresponds to the transpose of the linear physical model. In the case of non-linearity, the inverse needs to be approximated. This method is also known as the "Deep unfolding" algorithm in \cite{Shlezinger2021}.	This algorithm is commonly used in knowledge-based methods that are combined with deep learning.
+
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.99\textwidth]{figs/cascaded-arch.png}
+		\centering
+		\caption{Cascaded physics-informed ML engine, \cite{Ozcan2019}.}
+		\label{img:cascaded-arch}
+	\end{figure}
+	
+	Presented a sample result from in (fig \ref{img:cascaded-result} the input improvement can be easily seen in the result of passing the under-sampled input to 5 sequential cascaded networks. As time passes, one more level of enhancement in the resolution is presented.
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.99\textwidth]{figs/cascaded-result.png}
+		\centering
+		\caption{Sample image resolution enhancement using cascaded physics-informed ML engine. From left, the first is the raw input image. Then, each image corresponds to the output of first, second, third and fourth layers of the cascaded network, \cite{Ozcan2019}.}
+		\label{img:cascaded-result}
+	\end{figure}
+	\pagebreak
+	\section{Overview of deblurring}
+	In general, considering y as the observed blurry image, and x as it's deblurred estimation of the ground truth in space domain, a deblurring problem is shown as follows:
+	
+	\begin{align}
+		y = k * x + n \\
+		\nabla{y} = k *\nabla{x} + \nabla{n}
+	\end{align}
+	
+	Where k denotes the blurring kernel which is convolved to the deblurred image. Regarding this point, image deblurring in some applications is called image deconvolution, \cite{Quan2021}. Also, n stands for the additive noise. In this case, if the kernel is known, the task will be called a non-blind task, \cite{Quan2021}. On the other hand, in some cases, even the kernel k is not also known and has to be trained using deep learning. In such scenarios, the task will be blind deblurring, \cite{Li2020}.
+	
+	\subsection{Non-blind Image Deblurring}
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.99\textwidth]{figs/non-blind-arch.png}
+		\centering
+		\caption{Diagram of the proposed CNN for nonblind image deblurring. (a) CNN’s architecture. (b) INV’s architecture. (c) DN’s architecture \cite{Quan2021}.}
+		\label{img:nonblind-arch}
+	\end{figure}
+	
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.99\textwidth]{figs/nonblind-result.png}
+		\centering
+		\caption{Visual comparison of deblurring results on image “Butterfly” in the presence of AWGN with fixed strength, \cite{Quan2021}.
+			\label{img:nonblind-result}}
+	\end{figure}
+	
+	On the other hand, another method is to estimate the distribution of deblurred image using the knowledge of system (\(p(x|y, k)\)) with deep learning and algorithm unrolling, \cite{Nan2020}. The equation will be as follows:
+	\begin{align}
+		p(x|y, k) \alpha p(y|x, k).p(x)
+	\end{align}
+	Regarding the deblurring equation, the noise, in this case, has a distribution with $\sigma$ as the standard deviation. To find out \(p(x)\), it is more common to look for its gradient as an image naturally uses the \(l_p\)-norm to statistically explain the clear image distribution considering a Hyper-Laplacian distribution for the gradient of \(x\). However, in this method, instead of this classical model, a deep neural network is being used. A variational expectation-maximization (VEM) algorithm, in this case, is responsible for maximizing the likelihood of x being in the estimated distribution instead of minimizing a loss function. Two steps are taken; E-step and M-step shown in \ref{img:noise-blind-arch}. As visible in the architecture, after learning the parameters, the unrolling of the layers is taking place. \cite{Nan2020}. 
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.99\textwidth]{figs/noise-blind-arch.jpg}
+		\centering
+		\caption{VEM deep learning unrolling algorithm in
+			T + 1 steps in total. "z" corresponds to the latent parameter which \(p(z)\) is a natural distribution function fitting image gradients in general, and  \(p(\nabla{x})=p(\nabla{x}|z).p(z)\). "$\lambda$" is the vector of the prior's standard deviation. \cite{Nan2020}.}	
+		\label{img:noise-blind-arch}
+	\end{figure}
+	
+	A sample results of this method is shown in (\ref{img:noise-blind-result}). After 4 unrolling stages, the deblurring result is noticeable. Specifically, in comparison with (fig \ref{img:nonblind-result}).
+	
+	\begin{figure*}
+		\includegraphics[width=0.99\textwidth]{figs/noise-blind-result.jpg}
+		\centering
+		\caption{Visualization of intermediate results from different stages of the proposed NN, with PSNR values \cite{Nan2020}.}
+		\label{img:noise-blind-result}
+	\end{figure*}
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|l|l|l|l|}
+			\hline
+			Dataset        & FCNN       & \cite{Quan2021}  & \cite{Nan2020} \\ \hline
+			Sun et al.’s   & 27.63/81 & 28.80/84 & 30.57/84                \\ \hline
+			Levin et al.’s & 26.48/73 & 27.86/75 & 32.02/91                \\ \hline
+		\end{tabular}
+		\label{tab:non-blind}
+		\caption{Comparing the results from two non-blind methods discussed with an additive white gaussian noise having a standard derivation $\sigma$ equal to \%5 tested for two different datasets. The numbers correspond to PSNR (dB)/SSIM (x100)}
+	\end{table}
+	
+	Both analytical and visual results show that \cite{Nan2020} is more successful in performing its deblurring task. However, the numbers reported from \cite{Quan2021} have conflicts with the results reported in (table \ref{tab:non-blind}). It seems that in \cite{Quan2021}, the authors performed the algorithm mentioned in \cite{Nan2020} on their own, instead of relying on the numbers reported in their paper. Therefore, they faced new numbers. This can bring up a noticeable discussion later whether they were not as successful as \cite{Nan2020} in applying their algorithm or is there any other point to notice. Furthermore, although the results reported in \cite{Nan2020} include an extended spectrum of $\sigma$ tested on different datasets, in \cite{Quan2021} only small numbers are examined. 
+	
+	\subsection{Blind Image Deblurring}
+	
+	Similar to the discussed methods, in blind image deblurring also, the main goal is to achieve a clear image from a present blurry image using the deep unfolding algorithm. The main difference, however, is that in this scenario, the kernel function k is not known. Therefore, it has to be trained before trying to deblur the images. That is why this task is more difficult than non-blind image deblurring, \cite{Monga2021}. Moreover, the unrolling task is not as similar as mentioned in the previous methods. In this section, a deep unrolling blind (DUBLID) algorithm is introduced. To implement this method, first, an analytical algorithm is shown in (\ref{alg:blind}). Then, the parameters in the algorithm are trained in a deep neural network, \cite{Li2020}. The filters are also altering for each step. In the algorithem, \(S_{\lambda}\) is defined as the soft-thresholding operator equal to \(sgn(x) . max(|x| - \lambda, 0)\)
+	
+		\begin{figure}
+		\includegraphics[width=0.95\textwidth]{figs/DUBLID-arch.png}
+		\centering
+		\caption{DUBLID: it uses a cascade of small 3 × 3 filters instead of large filters. S2 decreases
+			the dimensionality of the parameter space, then, training is simpler. Regarding the figure, an increase in l, resutls in an evolution in \(g^l\) and \(y^l\). \(F^{-1}\) stands for the inverse fourier transform. The blue parameters has been learned from real datasets, \cite{Li2020}.}
+		\label{img:blind-result}
+	\end{figure}
+
+	\begin{figure}
+		\includegraphics[width=0.9\textwidth]{figs/blind-alg.jpg}
+		\centering
+		\caption{In this algorithm, \(f_i\) consists of C different filters placed for the deep learning\cite{Li2020}.}
+		\label{alg:blind}
+	\end{figure}
+
+	To train the model, blurry images are simulated from clear images to refer to as the ground truth. When training is finished, the model is tested on real blurred images as shown in (fig \ref{img:blind-result}), \cite{Li2020}. This method not only does take less computational time and power to run, but also outperforms the state of the art blind image deblurring technics which is significant.
+	
+	\begin{figure}[!htbp]
+		\includegraphics[width=0.8\textwidth]{figs/DUBLID-result.png}
+		\centering
+		\caption{Qualitative comparisons on datasets from Kohler et al.’s [82] (top) and Lai et al. [45] (bottom). Kohler et al.’s dataset includes images blurred by large
+			motion, while Lai et al.’s dataset comprises real blurred images, \cite{Li2020}.
+			\label{img:blind-result}}
+	\end{figure}
+	
+	\section{Conclusion}
+	In sum, these algorithms can show us the impact of combining a physical model with a DNN can be significant. However, due to lack of space, some information is not presented here. In these algorithms, smaller datasets are utilized, and fewer computational resources are required. Surprisingly, the output accuracy is also more efficient than the data-driven networks as we are not putting away the valuable data about the analytical model we already know. The deblurring task is beneficial in computational imaging. We can learn from it is that in the case of knowing part of the noise model, model-based deep learning methods can help solve the deblurring problems substantially. As noticed earlier, the deep unfolding algorithm has a significant role in keeping a high performance, while minimizing time consumption. Its application in image deblurring was noticeable in all the reviewed deblurring articles.
+	
+	\section{Acknowledgement}
+	This work is financially sponsored by the Electrical and Computer Engineering department at the University of Memphis. Also, I would like to thank my advisor Professor Preza for her guidance and Doctor Van for his guidance. With special thanks to CIRL members, and our collaborator, the University of Valencia. Besides, all those who supported and guided this project.
+	
+	\bibliography{bibfile} 
+	\bibliographystyle{IEEEtran}
+	
+	\vspace{12pt}
+	\color{red}	
+	
+\end{document}
